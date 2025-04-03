@@ -1,19 +1,37 @@
 package com.example.projetdesignpattern.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.time.Duration;
-import java.time.LocalDateTime;
+import java.util.Date;
 
-public class InterventionUrgence extends Intervention {
 
-    public InterventionUrgence() {
-    }
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class InterventionUrgence implements Intervention {
+    private Date date;
+    private String technicien;
+    private int duree;
+    private String lieu;
 
-    public InterventionUrgence(LocalDateTime dateIntervention, Duration duree, String lieu, Technicien technicien) {
-        super(dateIntervention, duree, lieu, technicien);
+
+    @Override
+    public void afficherDetails() {
+        System.out.println("🚨 Intervention d'Urgence !");
+        System.out.println("📅 Date : " + date);
+        System.out.println("👨‍🔧 Technicien : " + technicien);
+        System.out.println("⏳ Durée : " + duree + " heures");
+        System.out.println("📍 Lieu : " + lieu);
     }
 
     @Override
-    public void demarrerIntervention() {
-        System.out.println("Démarrage d'une intervention d'URGENCE ! Priorité absolue. Lieu : " + lieu);
+    public String toString() {
+        return "Urgence{Date=" + date + ", Technicien='" + technicien + "', Durée=" + duree + "h, Lieu='" + lieu + "'}";
     }
 }
+

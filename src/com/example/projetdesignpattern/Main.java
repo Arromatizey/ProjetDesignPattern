@@ -2,34 +2,20 @@ package com.example.projetdesignpattern;
 
 import com.example.projetdesignpattern.models.*;
 import java.time.*;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        // Création d'un technicien
-        Technicien t = new Technicien("Dupont", "Jean");
+        GestionnaireInterventions gestionnaire = new GestionnaireInterventions();
 
-        // Création d'une intervention Maintenance
-        InterventionMaintenance maintenance = new InterventionMaintenance(
-                LocalDateTime.now(),
-                Duration.ofHours(2),
-                "Paris",
-                t
-        );
+        gestionnaire.creerIntervention("maintenance", new Date(), "Paul Martin", 2, "Paris");
+        gestionnaire.creerIntervention("urgence", new Date(), "Jean Dupont", 1, "Lyon");
 
-        // Appel d'une méthode pour afficher
-        maintenance.afficherDetails();
-        maintenance.demarrerIntervention();
+        gestionnaire.assignerTechnicien(0, "Alice Durand");  // Assigner Alice à la première intervention
 
-        System.out.println("--------------------");
+        gestionnaire.sauvegarder();
 
-        // Création d'une intervention Urgence
-        InterventionUrgence urgence = new InterventionUrgence(
-                LocalDateTime.now(),
-                Duration.ofHours(1),
-                "Marseille",
-                t
-        );
-        urgence.afficherDetails();
-        urgence.demarrerIntervention();
+        gestionnaire.afficherInterventions();
     }
 }
+
