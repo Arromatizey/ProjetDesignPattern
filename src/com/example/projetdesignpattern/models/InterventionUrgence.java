@@ -3,12 +3,12 @@ package com.example.projetdesignpattern.models;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class UrgenceIntervention extends Intervention {
+public class InterventionUrgence extends Intervention {
 
-    public UrgenceIntervention() {
+    public InterventionUrgence() {
     }
 
-    public UrgenceIntervention(LocalDateTime dateIntervention, Duration duree, String lieu, Technicien technicien) {
+    public InterventionUrgence(LocalDateTime dateIntervention, Duration duree, String lieu, Technicien technicien) {
         super(dateIntervention, duree, lieu, technicien);
     }
 

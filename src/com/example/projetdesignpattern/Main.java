@@ -9,7 +9,7 @@ public class Main {
         Technicien t = new Technicien("Dupont", "Jean");
 
         // Création d'une intervention Maintenance
-        MaintenanceIntervention maintenance = new MaintenanceIntervention(
+        InterventionMaintenance maintenance = new InterventionMaintenance(
                 LocalDateTime.now(),
                 Duration.ofHours(2),
                 "Paris",
@@ -23,7 +23,7 @@ public class Main {
         System.out.println("--------------------");
 
         // Création d'une intervention Urgence
-        UrgenceIntervention urgence = new UrgenceIntervention(
+        InterventionUrgence urgence = new InterventionUrgence(
                 LocalDateTime.now(),
                 Duration.ofHours(1),
                 "Marseille",
