@@ -1,3 +1,4 @@
+// Technicien.java
 package com.example.projetdesignpattern.models;
 
 import lombok.AllArgsConstructor;
@@ -12,13 +13,14 @@ import lombok.Setter;
 public class Technicien {
     private String nom;
     private String prenom;
-    private String role;
+    private Role role;
 
     @Override
     public String toString() {
         return "Technicien{" +
                 "nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
+                ", rôle=" + role +
                 '}';
     }
 }
